@@ -15,7 +15,10 @@ public class TestOsoba {
             for (String i : p.getImiona()) {
                 System.out.print(i + " ");
             }
-            System.out.print(p.getNazwisko() + ": " + p.getOpis() + " uordzony/a: " + p.getDataUrodzenia() + ", plec: ");
+            System.out.print(p.getNazwisko() + ": " + p.getOpis() + " uordzony/a: " + p.getDataUrodzenia());
+            if (p instanceof Pracownik)
+                System.out.printf(". Pracownik z poborami :"+((Pracownik) p).getPobory()+" Zatrudnoinony dnia: "+((Pracownik) p).getDataZatrudnienia());
+            System.out.printf(". Płeć: ");
             if (p.getPłeć()) {
                 System.out.println("Kobieta");
             } else {
