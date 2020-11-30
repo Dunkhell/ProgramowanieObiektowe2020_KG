@@ -61,5 +61,22 @@ public class ArrayUtilTest {
         for (Integer e: testSortList){
             System.out.println(e+" ");
         }
+        
+        
+        ArrayList<Integer> testMergeSort = new ArrayList<>();
+        testMergeSort.add(22);
+        testMergeSort.add(2);
+        testMergeSort.add(4);
+        testMergeSort.add(5);
+        testMergeSort.add(154);
+        testMergeSort.add(15);
+        testMergeSort.add(21);
+        testMergeSort.add(2);
+        testMergeSort.add(9);
+        ArrayUtil.mergeSort(testMergeSort);
+        System.out.println("MergeSort algorithm: ");
+        for (Integer e: testMergeSort){
+            System.out.println(e);
+        }
     }
 }
