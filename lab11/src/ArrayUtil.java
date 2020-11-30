@@ -44,7 +44,35 @@ public class ArrayUtil {
     }
 
     public static <T extends Comparable<? super T>> void mergeSort(ArrayList<T> tab){
-        System.out.println("work in progress!");
+        if (tab.size() > 1){
+            ArrayList<T> leftSide = new ArrayList<>();
+            ArrayList<T> rightSide = new ArrayList<>();
+            boolean doLeft = true;
+            while (!tab.isEmpty()){
+                if(doLeft){
+                    leftSide.add((tab.remove(0)));
+                }else{
+                    rightSide.add(tab.remove(tab.size()/2));
+                }
+                doLeft = !doLeft;
+            }
+            mergeSort(leftSide);
+            mergeSort(rightSide);
+            while(!leftSide.isEmpty() && !rightSide.isEmpty()){
+                if(leftSide.get(0).compareTo(rightSide.get(0)) <= 0){
+                    tab.add(leftSide.remove(0));
+                }else{
+                    tab.add(rightSide.remove(0));
+                }
+            }
+
+            if(!leftSide.isEmpty()){
+                tab.addAll(leftSide);
+            }
+            if(!rightSide.isEmpty()){
+                tab.addAll(rightSide);
+            }
+        }
     }
 
 }
