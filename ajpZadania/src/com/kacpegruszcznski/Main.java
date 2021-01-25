@@ -94,7 +94,7 @@ public class Main {
 //            }
 //        });
         assert catalogs != null;
-        return Arrays.stream(catalogs).map(File::getName).collect(Collectors.toList());
+        return Stream.of(catalogs).map(File::getName).collect(Collectors.toList());
     }
 
     public static List<String> findFilesWithExtension(String path, String extension) {
